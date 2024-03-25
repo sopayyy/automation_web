@@ -1,0 +1,4 @@
+robotframework==6.0
+robotframework-seleniumlibrary==6.0.0
+robotframework-debuglibrary==2.3.0
+selenium==4.8.0

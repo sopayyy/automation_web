@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.9.6 on darwin)" generated="20240325 12:29:57.843" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="/Users/sopay/Workspaces/automation_web/tests">
+<suite id="s1-s1" name="Authentication" source="/Users/sopay/Workspaces/automation_web/tests/Authentication.robot">
+<test id="s1-s1-t1" name="11A Open and Verify Landing page" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240325 12:29:58.357" level="INFO">Opening browser 'Chrome' to base url 'https://eklipse.gg/'.</msg>
+<status status="PASS" starttime="20240325 12:29:58.353" endtime="20240325 12:30:09.712"/>
+</kw>
+<kw name="Wait Until Page Loaded Completely" library="resource">
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState == 'complete'</arg>
+<arg>timeout=${LONG_TIMEOUT}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20240325 12:30:09.716" endtime="20240325 12:30:09.825"/>
+</kw>
+<status status="PASS" starttime="20240325 12:30:09.715" endtime="20240325 12:30:09.826"/>
+</kw>
+<tag>User</tag>
+<status status="PASS" starttime="20240325 12:29:58.352" endtime="20240325 12:30:09.831"/>
+</test>
+<test id="s1-s1-t2" name="12A Login Test" line="15">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240325 12:30:09.839" level="INFO">Opening browser 'Chrome' to base url 'https://app.eklipse.gg/login'.</msg>
+<status status="PASS" starttime="20240325 12:30:09.835" endtime="20240325 12:30:28.460"/>
+</kw>
+<kw name="Wait Until Page Loaded Completely" library="resource">
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState == 'complete'</arg>
+<arg>timeout=${LONG_TIMEOUT}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20240325 12:30:28.468" endtime="20240325 12:30:28.490"/>
+</kw>
+<status status="PASS" starttime="20240325 12:30:28.465" endtime="20240325 12:30:28.490"/>
+</kw>
+<tag>User</tag>
+<status status="PASS" starttime="20240325 12:30:09.833" endtime="20240325 12:30:28.491"/>
+</test>
+<status status="PASS" starttime="20240325 12:29:57.881" endtime="20240325 12:30:28.499"/>
+</suite>
+<status status="PASS" starttime="20240325 12:29:57.845" endtime="20240325 12:30:28.501"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">User</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Authentication">Tests.Authentication</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240325 12:29:58.349" level="WARN">Imported resource file '/Users/sopay/Workspaces/automation_web/keywords/logics/LoginLogic.robot' is empty.</msg>
+</errors>
+</robot>
