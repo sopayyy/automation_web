@@ -1,8 +1,5 @@
 *** Settings ***
-# Suite Setup         Open Browser For Vidio Page
-# Suite Teardown      Close All Browsers
-# Test Setup          Delete All Cookies
-# Test Teardown       Capture Failed and Logout User
+Suite Teardown      Close Browser
 Resource            ../resource.robot
 Force Tags          User
 
@@ -15,3 +12,12 @@ Force Tags          User
 12A Login Test
     Open Browser     ${LOGIN_URL}    ${BROWSER}
     Wait Until Page Loaded Completely
+    Input Text      id=username     ${VALID_USER}
+    Input Password  id=password     ${VALID_PASSWORD}
+    Click Element   xpath=//button[@type='submit']
+    Wait Until Page Contains    Home
+    Run Keyword And Ignore Error    Click Element    xpath=//button[@class='btn btn-link--highlight' and contains(text(), 'Skip for now')]
+    Click Element   class=ic-user
+    Wait Until Page Contains    ${VALID_USER}
+    #Page Should Contain Element    xpath=//small[@class='role-name' and contains(text(), '${VALID_USER}')]
+    Close Browser
